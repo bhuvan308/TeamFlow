@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+      Baseline Content-Security-Policy. This only takes effect if the app is
+      served as a static file without a proper HTTP header; in production
+      prefer setting the equivalent header at the reverse proxy/CDN level
+      instead of (or in addition to) this tag.
+    -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; connect-src 'self' http://localhost:4000; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline'; script-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none';"
+    />
+    <meta name="referrer-policy" content="strict-origin-when-cross-origin" />
+    <title>TeamFlow</title>
+  </head>
+  <body class="bg-brand-50 text-brand-900">
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

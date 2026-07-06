@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    font-feature-settings: 'cv11', 'ss01';
+  }
+  :focus-visible {
+    outline: 2px solid #8b5cf6;
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-md px-3 py-2 text-sm font-medium transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .btn-primary {
+    @apply btn bg-accent-gradient text-white shadow-sm shadow-violet-500/20 transition-transform hover:brightness-110 hover:shadow-md hover:shadow-violet-500/25 active:scale-[0.98] focus-visible:outline-violet-500;
+  }
+  .btn-secondary {
+    @apply btn bg-white text-brand-800 border border-brand-200 hover:border-violet-200 hover:bg-violet-50/60;
+  }
+  .btn-danger {
+    @apply btn bg-white text-red-600 border border-red-200 hover:bg-red-50;
+  }
+  .input {
+    @apply w-full rounded-md border border-brand-200 bg-white px-3 py-2 text-sm placeholder:text-brand-400 focus:border-violet-400 focus:outline-none focus:ring-1 focus:ring-violet-400;
+  }
+  .card {
+    @apply rounded-lg border border-brand-200 bg-white p-4 shadow-sm transition-shadow hover:shadow-md;
+  }
+  .label {
+    @apply mb-1 block text-xs font-medium text-brand-500;
+  }
+  /* Gradient text for headings/logo - keeps the rest of the UI monochrome
+     so the accent stays an accent instead of taking over. */
+  .text-gradient {
+    @apply bg-accent-gradient-text bg-clip-text text-transparent;
+  }
+  /* 3px gradient rail along the top of a card - a quiet way to mark
+     "this is a primary entity" without coloring the whole card. */
+  .card-accent-top {
+    @apply relative overflow-hidden;
+  }
+  .card-accent-top::before {
+    content: '';
+    @apply absolute inset-x-0 top-0 h-[3px] bg-accent-gradient;
+  }
+}
