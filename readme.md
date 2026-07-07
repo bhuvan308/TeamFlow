@@ -8,6 +8,9 @@ It provides a single platform for project planning, task management, Root Cause 
 
 # Features
 
+## [Demo video]
+{https://youtu.be/tu8XnR3d_sY?si=Dr_iEmhP1bLdllDe}
+
 ## Authentication
 
 - User Registration
